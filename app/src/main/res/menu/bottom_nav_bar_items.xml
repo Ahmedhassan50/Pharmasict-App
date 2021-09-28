@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeIcon"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title=""
+
+
+        />
+    <item
+        android:id="@+id/calendarIcon"
+        android:icon="@drawable/ic_outline_calendar_today_24"
+        android:title=""
+
+
+        />
+    <item
+        android:id="@+id/courses"
+        android:icon="@drawable/ic_outline_book_24"
+        android:title=""
+
+
+        />
+    <item
+        android:id="@+id/drugIndex"
+        android:icon="@drawable/ic_outline_drag_indicator_24"
+        android:title=""
+
+
+        />
+    <item
+        android:id="@+id/prouductCatalogue"
+        android:icon="@drawable/ic_outline_category_24"
+        android:title=""
+
+
+        />
+</menu>
