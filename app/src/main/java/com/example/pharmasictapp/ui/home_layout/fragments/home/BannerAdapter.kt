@@ -1,4 +1,4 @@
-package com.example.pharmasictapp.home_layout.fragments.home
+package com.example.pharmasictapp.ui.home_layout.fragments.home
 
 import android.util.Log
 import android.view.LayoutInflater

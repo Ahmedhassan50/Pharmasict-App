@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmasictApp">
         <activity
-            android:name=".home_layout.HomeLayout"
+            android:name=".ui.home_layout.HomeLayout"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

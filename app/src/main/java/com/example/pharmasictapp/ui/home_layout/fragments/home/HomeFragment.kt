@@ -1,4 +1,4 @@
-package com.example.pharmasictapp.home_layout.fragments.home
+package com.example.pharmasictapp.ui.home_layout.fragments.home
 
 import android.os.Bundle
 import android.os.Handler

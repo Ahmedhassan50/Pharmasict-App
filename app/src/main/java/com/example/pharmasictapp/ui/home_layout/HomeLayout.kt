@@ -1,4 +1,4 @@
-package com.example.pharmasictapp.home_layout
+package com.example.pharmasictapp.ui.home_layout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,21 +7,21 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.pharmasictapp.R
-import com.example.pharmasictapp.home_layout.fragments.calendar.CalenderFragment
-import com.example.pharmasictapp.home_layout.fragments.courses.CoursesFragment
-import com.example.pharmasictapp.home_layout.fragments.drugindex.DrugIndexFragment
-import com.example.pharmasictapp.home_layout.fragments.home.HomeFragment
-import com.example.pharmasictapp.home_layout.fragments.products_catalogue.ProductsCatalogueFragment
+import com.example.pharmasictapp.ui.home_layout.fragments.calendar.CalenderFragment
+import com.example.pharmasictapp.ui.home_layout.fragments.courses.CoursesFragment
+import com.example.pharmasictapp.ui.home_layout.fragments.drugindex.DrugIndexFragment
+import com.example.pharmasictapp.ui.home_layout.fragments.home.HomeFragment
+import com.example.pharmasictapp.ui.home_layout.fragments.products_catalogue.ProductsCatalogueFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeLayout : AppCompatActivity() {
 
 
-    private  val homeFragment=HomeFragment()
-    private  val calenderFragment=CalenderFragment()
-    private  val coursesFragment=CoursesFragment()
-    private  val drugIndexFragment=DrugIndexFragment()
-    private  val productsCatalogueFragment=ProductsCatalogueFragment()
+    private  val homeFragment= HomeFragment()
+    private  val calenderFragment= CalenderFragment()
+    private  val coursesFragment= CoursesFragment()
+    private  val drugIndexFragment= DrugIndexFragment()
+    private  val productsCatalogueFragment= ProductsCatalogueFragment()
 
 
 
