@@ -13,6 +13,10 @@ import com.example.pharmasictapp.ui.home_layout.fragments.drugindex.DrugIndexFra
 import com.example.pharmasictapp.ui.home_layout.fragments.home.HomeFragment
 import com.example.pharmasictapp.ui.home_layout.fragments.products_catalogue.ProductsCatalogueFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 
 class HomeLayout : AppCompatActivity() {
 
@@ -22,24 +26,38 @@ class HomeLayout : AppCompatActivity() {
     private  val coursesFragment= CoursesFragment()
     private  val drugIndexFragment= DrugIndexFragment()
     private  val productsCatalogueFragment= ProductsCatalogueFragment()
+    private  lateinit var firebaseAnalytics: FirebaseAnalytics
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_layout)
+        firebaseAnalytics = Firebase.analytics
         val toolBar:androidx.appcompat.widget.Toolbar= findViewById(R.id.toolBar)
         toolBar.title=""
 
         setSupportActionBar(toolBar)
         replaceFragment(homeFragment)
+        firebaseAnalytics.logEvent("home",null)
         findViewById<BottomNavigationView>(R.id.bottom_nav_bar).setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.homeIcon-> replaceFragment(homeFragment)
-                R.id.calendarIcon-> replaceFragment(calenderFragment)
-                R.id.courses-> replaceFragment(coursesFragment)
-                R.id.drugIndex-> replaceFragment(drugIndexFragment)
-                R.id.prouductCatalogue-> replaceFragment(productsCatalogueFragment)
+                R.id.homeIcon->{
+                    firebaseAnalytics.logEvent("home",null)
+
+                    replaceFragment(homeFragment)}
+                R.id.calendarIcon-> {
+                    firebaseAnalytics.logEvent("calender",null)
+                    replaceFragment(calenderFragment)}
+                R.id.courses->{
+                    firebaseAnalytics.logEvent("courses",null)
+                    replaceFragment(coursesFragment)}
+                R.id.drugIndex->{
+                    firebaseAnalytics.logEvent("drugIndex",null)
+                    replaceFragment(drugIndexFragment)}
+                R.id.prouductCatalogue->{
+                    firebaseAnalytics.logEvent("productsCatalogue",null)
+                    replaceFragment(productsCatalogueFragment)}
 
             }
             true
@@ -53,8 +71,12 @@ class HomeLayout : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.profileIcon -> Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show()
-            R.id.notificationIcon -> Toast.makeText(this,"notification", Toast.LENGTH_SHORT).show()
+            R.id.profileIcon ->{
+                firebaseAnalytics.logEvent("profile",null)
+                Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show()}
+            R.id.notificationIcon ->{
+                firebaseAnalytics.logEvent("notification",null)
+                Toast.makeText(this,"notification", Toast.LENGTH_SHORT).show()}
         }
         return super.onOptionsItemSelected(item)
     }
