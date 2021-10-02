@@ -11,11 +11,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.model.BannerItem
 import com.example.pharmasictapp.R
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 
 class BannerAdapter(private val bannerItems:MutableList<BannerItem>):RecyclerView.Adapter<BannerViewHolder>() {
+
+
+    private  lateinit var firebaseAnalytics: FirebaseAnalytics
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
       val inflater =LayoutInflater.from(parent.context)
         val view:View=inflater.inflate(R.layout.banner_item,parent,false)
+        firebaseAnalytics = Firebase.analytics
 
         return BannerViewHolder(view)
     }
@@ -25,9 +36,13 @@ class BannerAdapter(private val bannerItems:MutableList<BannerItem>):RecyclerVie
         val bannerItem=bannerItems[position]
         Glide.with(holder.bannerImage.rootView)
             .load(bannerItem.imageUrl).into(holder.bannerImage)
-        holder.bannerImage.setOnClickListener{
-
+        holder.itemView.setOnClickListener{
+//            Log.i("bannner","$position")
+            firebaseAnalytics.logEvent("CarouselOfBanners"){
+                param("BannerId","${bannerItem.id}")
+            }
         }
+
 
 
 

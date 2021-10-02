@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.model.BannerItem
 import com.example.pharmasictapp.R
+import com.example.pharmasictapp.SeparatedSpace
 
 class HomeFragment:Fragment() {
 
@@ -54,18 +55,41 @@ class HomeFragment:Fragment() {
         })
 
         val eventRv: RecyclerView =view.findViewById(R.id.event_RV)
-        eventRv.layoutManager= LinearLayoutManager(view.context, RecyclerView.HORIZONTAL,false)
+//        eventRv.layoutManager= LinearLayoutManager(view.context, RecyclerView.HORIZONTAL,false)
+
+        eventRv.layoutManager =object : LinearLayoutManager(view.context, RecyclerView.HORIZONTAL,false) {
+            override fun checkLayoutParams(lp: RecyclerView.LayoutParams): Boolean {
+                // force height of viewHolder here, this will override layout_height from xml
+                lp.width = (width * 0.8).toInt()
+                lp.height = (width * 0.7).toInt()
+                return true
+            }
+        }
+
+        eventRv.addItemDecoration(SeparatedSpace(40))
+
+
+
 
         eventRv.adapter= EventsAdapter()
+
         eventRv.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
 
 
         val offerRv: RecyclerView =view.findViewById(R.id.offer_RV)
-        offerRv.layoutManager= LinearLayoutManager(view.context, RecyclerView.HORIZONTAL,false)
-
+        offerRv.layoutManager= object : LinearLayoutManager(view.context, RecyclerView.HORIZONTAL,false) {
+            override fun checkLayoutParams(lp: RecyclerView.LayoutParams): Boolean {
+                // force height of viewHolder here, this will override layout_height from xml
+                lp.width = (width * 0.8).toInt()
+                lp.height = (width * 0.15).toInt()
+                return true
+            }
+        }
+        offerRv.addItemDecoration(SeparatedSpace(40))
         offerRv.adapter= OffersAdapter()
         offerRv.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+
 
     }
 
