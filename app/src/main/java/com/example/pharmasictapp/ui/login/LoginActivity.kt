@@ -7,8 +7,12 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import com.example.pharmasictapp.R
-import com.example.pharmasictapp.ui.Logic.CheckCredentials
-import com.example.pharmasictapp.ui.Logic.ValidUserInfo
+import com.example.pharmasictapp.utils.CheckCredentials
+import com.example.pharmasictapp.utils.ValidUserInfo
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var  etPassword:EditText
@@ -17,12 +21,14 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var  tvForgetPassword:TextView
     private lateinit var  tvSignUp:TextView
     private lateinit var  btnLogin:Button
+    private  lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initMainActivity()
-
+        FirebaseApp.initializeApp(this)
+          firebaseAnalytics = Firebase.analytics
         btnLogin.setOnClickListener{
             var validCredentials:Boolean=false
             var validUserInfo:Boolean=false
@@ -38,12 +44,13 @@ class LoginActivity : AppCompatActivity() {
             if(validUserInfo)
             {
                 // check credentials
-            validCredentials= checkCredentials(email,password)
+                validCredentials= checkCredentials(email,password)
             }
 
-            else {
-                // go to home activity
+            else if(validCredentials){
 
+                firebaseAnalytics.logEvent("Login",null)
+                // go to home activity
             }
 
 
@@ -52,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
         }
         btnSkip.setOnClickListener {
             // go to home activity as a guest
-
+            firebaseAnalytics.logEvent("skipClicked",null)
         }
 
         tvSignUp.setOnClickListener {

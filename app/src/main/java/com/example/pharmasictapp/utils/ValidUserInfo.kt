@@ -1,4 +1,4 @@
-package com.example.pharmasictapp.ui.Logic
+package com.example.pharmasictapp.utils
 
 class ValidUserInfo
 {

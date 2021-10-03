@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "895850528777",
+    "project_id": "pharmasict-app",
+    "storage_bucket": "pharmasict-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895850528777:android:74c5ad094dcd919529f8d8",
+        "android_client_info": {
+          "package_name": "com.example.pharmasictapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895850528777-8s787220drqpbl9nqfbqqr40fvnsuq2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWccyrTHRMwVbYVesJRI_0yCyUJBjFP50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895850528777-8s787220drqpbl9nqfbqqr40fvnsuq2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

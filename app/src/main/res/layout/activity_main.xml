@@ -3,11 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.login.LoginActivity">
-
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginActivity"
+        >
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_marginTop="110dp"
@@ -27,7 +26,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="5dp">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    >
 
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/img_btn_login_skip"
                             android:layout_width="wrap_content"
@@ -157,8 +165,8 @@
                                     android:textSize="23dp"
                                     android:textStyle="bold" />
                         </LinearLayout>
-
-
+                   </LinearLayout>
+                </ScrollView>
                 </LinearLayout>
 
 
@@ -188,5 +196,4 @@
         android:src="@drawable/eva_pharma_logo"
          />
 
-
-</RelativeLayout>
+    </RelativeLayout>
