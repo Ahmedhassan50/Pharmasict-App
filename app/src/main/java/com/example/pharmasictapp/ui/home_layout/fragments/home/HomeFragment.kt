@@ -67,12 +67,7 @@ class HomeFragment:Fragment() {
         }
 
         eventRv.addItemDecoration(SeparatedSpace(40))
-
-
-
-
         eventRv.adapter= EventsAdapter()
-
         eventRv.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
 

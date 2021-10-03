@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -49,6 +50,8 @@ dependencies {
     //firebase
     implementation platform('com.google.firebase:firebase-bom:28.4.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    implementation 'me.farahani.spaceitemdecoration:spaceitemdecoration:1.0'
 
 
 }

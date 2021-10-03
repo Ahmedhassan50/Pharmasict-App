@@ -1,14 +1,12 @@
 package com.example.pharmasictapp.ui.home_layout.fragments.courses
 
-import android.graphics.Color
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 import com.example.pharmasictapp.R
 import com.google.android.material.tabs.TabLayout
 
