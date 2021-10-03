@@ -1,12 +1,15 @@
 package com.example.pharmasictapp.ui.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import com.example.pharmasictapp.R
+import com.example.pharmasictapp.ui.home_layout.HomeLayout
 import com.example.pharmasictapp.utils.CheckCredentials
 import com.example.pharmasictapp.utils.ValidUserInfo
 import com.google.firebase.FirebaseApp
@@ -47,10 +50,13 @@ class LoginActivity : AppCompatActivity() {
                 validCredentials= checkCredentials(email,password)
             }
 
-            else if(validCredentials){
+             if(validCredentials){
 
-                firebaseAnalytics.logEvent("Login",null)
+              firebaseAnalytics.logEvent("Login",null)
                 // go to home activity
+
+                val intent: Intent = Intent(this@LoginActivity,HomeLayout::class.java)
+                startActivity(intent)
             }
 
 

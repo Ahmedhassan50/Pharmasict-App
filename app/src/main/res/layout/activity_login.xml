@@ -129,6 +129,7 @@
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:padding="5dp"
+                            app:backgroundTint="@color/logo_color"
                             android:textAllCaps="false"
                             android:layout_gravity="center"
                             />

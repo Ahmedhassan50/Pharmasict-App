@@ -17,6 +17,6 @@ object LoggingUserInfo {
     }
     fun getPassword():String
     {
-        return password ?:"123456"
+        return password ?:"12345678"
     }
 }
