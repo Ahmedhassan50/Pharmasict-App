@@ -23,7 +23,7 @@ class CheckCredentials
 
         }
 
-        fun checkPassword(pass: String):Int
+        /*fun checkPassword(pass: String):Int
         {
             val currentPass= LoggingUserInfo.getPassword()
 
@@ -33,7 +33,7 @@ class CheckCredentials
                 NOT_VALID
             }
 
-        }
+        }*/
 
 
     }
