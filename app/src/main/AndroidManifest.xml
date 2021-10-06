@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmasictApp">
-
+        <activity
+            android:name=".ui.signup.ProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.signup.SignUpActivity"
             android:exported="true">

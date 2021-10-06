@@ -1,5 +1,6 @@
 package com.example.pharmasictapp.ui.signup
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
@@ -79,14 +80,14 @@ class SignUpActivity() : AppCompatActivity(), AdapterView.OnItemSelectedListener
                     "password cannot be empty",
                     Toast.LENGTH_LONG
                 ).show()
-                passwordText.equals(confirmPasswordText)   -> {
+                /*passwordText!==confirmPasswordText   -> {
                     password?.error = "password doesn't match"
                     Toast.makeText(
                         this,
                         "password doesn't match",
                         Toast.LENGTH_LONG
                     ).show()
-                }
+                }*/
 
                 Patterns.EMAIL_ADDRESS.matcher(emailText).matches().not() -> {
                     email?.error = "Enter valid email"
@@ -134,7 +135,6 @@ class SignUpActivity() : AppCompatActivity(), AdapterView.OnItemSelectedListener
                         Toast.LENGTH_LONG
                     ).show()
 
-
                 }
 
             }
@@ -153,6 +153,11 @@ class SignUpActivity() : AppCompatActivity(), AdapterView.OnItemSelectedListener
             if(selectedItem=="Pharmacist"){
                 isPharmcist=true
             }else{isPharmcistOwner=true}
+        }else{
+            pharmcyName=findViewById(R.id.et_signup_pharmacyName)
+            pharmcyName.setVisibility(View.INVISIBLE);
+            pharmacyArea=findViewById(R.id.et_signup_PharmcyArea)
+            pharmacyArea.setVisibility(View.INVISIBLE);
         }
     }
 

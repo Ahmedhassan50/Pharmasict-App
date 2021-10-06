@@ -3,13 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/drawable/circle.xml" value="0.2657407407407407" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/drawable/close_icon.xml" value="0.14739583333333334" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/drawable/ic_baseline_phone_android_24.xml" value="0.14635416666666667" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/drawable/login_btn_shape.xml" value="0.14739583333333334" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/drawable/password_icon.xml" value="1.0107142857142857" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/drawable/username_icon.xml" value="0.14739583333333334" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/layout/activity_main.xml" value="0.13125" />
+        <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/layout/activity_sign_up.xml" value="0.21875" />
+        <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/layout/content_sign_up.xml" value="0.21875" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/layout/signup.xml" value="0.13125" />
         <entry key="..\:/LearningAndroid/Pharmasict-App/app/src/main/res/menu/icons.xml" value="0.25416666666666665" />
