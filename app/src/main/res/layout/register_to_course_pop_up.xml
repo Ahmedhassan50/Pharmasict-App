@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+     android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    >
+<androidx.cardview.widget.CardView
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="15dp"
+
+    >
+    <LinearLayout
+        android:background="@drawable/confirm_course_registeration_shape"
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<TextView
+    android:layout_marginTop="15dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Course Name"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="5dp"
+
+    android:id="@+id/course_confirmation_name"
+    android:textStyle="bold"
+    android:textSize="28sp"
+    android:textColor="@color/dark_blue"
+    />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Course Type"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:id="@+id/course_confirmation_type"
+            android:textStyle="normal"
+            android:textSize="25sp"
+            android:textColor="@color/dark_blue"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="Start Date"
+
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:textColor="@color/dark_blue"
+                />
+
+            <TextView
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/8/2021"
+
+            android:id="@+id/course_confirmation_start_date"
+            android:textStyle="normal"
+            android:textSize="25sp"
+            android:textColor="@color/dark_blue"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/white"
+            android:layout_height="match_parent">
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="End Date"
+
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:textColor="@color/dark_blue"
+                />
+
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1/10/2021"
+                android:id="@+id/course_confirmation_end_date"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:textColor="@color/dark_blue"
+                />
+        </LinearLayout>
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:paddingBottom="10dp"
+            android:background="@color/white"
+            android:src="@drawable/eva_pharma_logo"
+            android:scaleType="fitCenter"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</LinearLayout>

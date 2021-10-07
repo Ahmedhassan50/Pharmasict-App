@@ -1,5 +1,8 @@
 package com.example.pharmasictapp.ui.course_details
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -25,10 +28,29 @@ class CoursesDetailsActivity : AppCompatActivity() {
         setLessonsData()
         setInstructorsData()
         setCourseData()
+
+        val notificationIntent=intent
+        if(notificationIntent!=null)
+        { val  msg=notificationIntent.getStringExtra("msg")
+        val title=notificationIntent.getStringExtra("title")
+            if (title != null) {
+                if(title.isEmpty())
+                    tvCourseName.text=title
+            }
+        }
+
         btnEnrollToCourse.setOnClickListener{
-          //get current user data
-          // send them to db
-            Toast.makeText(this,"Welcome to our Family!",Toast.LENGTH_LONG).show()
+
+            var dialog=RegisterDialog()
+            val args = Bundle()
+            args.putString("name", tvCourseName.text.toString())
+            args.putString("type", tvCourseType.text.toString())
+            dialog.arguments=args
+            dialog.show(supportFragmentManager,"Confirm")
+
+
+
+
         }
 
 

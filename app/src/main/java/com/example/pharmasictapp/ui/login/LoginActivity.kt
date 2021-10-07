@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import com.example.pharmasictapp.R
+import com.example.pharmasictapp.ui.course_details.CoursesDetailsActivity
 import com.example.pharmasictapp.ui.home_layout.HomeLayout
 import com.example.pharmasictapp.utils.CheckCredentials
 import com.example.pharmasictapp.utils.ValidUserInfo
@@ -32,40 +33,41 @@ class LoginActivity : AppCompatActivity() {
         initMainActivity()
         FirebaseApp.initializeApp(this)
           firebaseAnalytics = Firebase.analytics
-        btnLogin.setOnClickListener{
-            var validCredentials:Boolean=false
-            var validUserInfo:Boolean=false
+
+        btnLogin.setOnClickListener {
+            var validCredentials: Boolean = false
+            var validUserInfo: Boolean = false
 
             //get the inputs
-            val email=etEmail.text.toString()
-            val password=etPassword.text.toString()
+            val email = etEmail.text.toString()
+            val password = etPassword.text.toString()
 
 
             // check validations
-             validUserInfo= validateInputs(email,password)
+            validUserInfo = validateInputs(email, password)
 
-            if(validUserInfo)
-            {
+            if (validUserInfo) {
                 // check credentials
-                validCredentials= checkCredentials(email,password)
+                validCredentials = checkCredentials(email, password)
             }
 
-             if(validCredentials){
+            if (validCredentials) {
 
-              firebaseAnalytics.logEvent("Login",null)
+                firebaseAnalytics.logEvent("Login", null)
                 // go to home activity
 
-                val intent: Intent = Intent(this@LoginActivity,HomeLayout::class.java)
+                val intent: Intent = Intent(this@LoginActivity, HomeLayout::class.java)
                 startActivity(intent)
             }
 
 
-
-
         }
+
         btnSkip.setOnClickListener {
             // go to home activity as a guest
             firebaseAnalytics.logEvent("skipClicked",null)
+            val intent: Intent = Intent(this@LoginActivity, HomeLayout::class.java)
+            startActivity(intent)
         }
 
         tvSignUp.setOnClickListener {
@@ -142,6 +144,7 @@ class LoginActivity : AppCompatActivity() {
         return valid&&passwordValid
 
     }
+
 
 
     private fun initMainActivity() {

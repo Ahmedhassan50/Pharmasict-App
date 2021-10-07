@@ -3,31 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/drawable/ic_outline_account_circle_24.xml" value="0.21296296296296297" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/drawable/navigation_view_colored.xml" value="0.21296296296296297" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_courses_details.xml" value="0.1793478260869565" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_home.xml" value="0.19010416666666666" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_home_layout.xml" value="0.19157608695652173" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_login.xml" value="0.1947463768115942" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_main.xml" value="0.19972826086956522" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_main2.xml" value="0.1947463768115942" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/app_action_bar.xml" value="0.19157608695652173" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/banner_item.xml" value="0.19972826086956522" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/calender_view.xml" value="0.1875" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/course_item.xml" value="0.1793478260869565" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/courses_view.xml" value="0.1875" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/drug_index_view.xml" value="0.1875" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/event_home_item.xml" value="0.1956521739130435" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/my_courses.xml" value="0.1838768115942029" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/offers_item.xml" value="0.1875" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/products_catalogue_view.xml" value="0.1875" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/upcoming_courses.xml" value="0.1838768115942029" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/menu/action_bar_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/menu/bottom_nav_bar_items.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/close_icon.xml" value="0.25462962962962965" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/confirm_btn_shape.xml" value="0.2703125" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/confirm_course_registeration_shape.xml" value="0.2703125" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/login_btn_shape.xml" value="0.2351851851851852" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/password_icon.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/send_btn_shape.xml" value="0.2703125" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/drawable/username_icon.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/Instructor_item.xml" value="0.234375" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/activity_courses_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/activity_main2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/activity_register_course.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/instructor_item.xml" value="0.2" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/lesson_item.xml" value="0.234375" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/register_to_course_pop_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/layout/signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/MBR/AndroidStudioProjects/Pharmasict-App/app/src/main/res/menu/menu.xml" value="0.23854166666666668" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
