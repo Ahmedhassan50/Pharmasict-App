@@ -13,5 +13,8 @@
 
     <color name="logo_color">#092769</color>
     <color name="nav_unselected_color">#A9A9A9</color>
+    <color name="solidCircle">#AAFFFFFF</color>
+    <color name="headings">#3797CF</color>
+    <color name="grey">#E5E5E5</color>
 
 </resources>

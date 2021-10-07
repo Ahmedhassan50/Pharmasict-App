@@ -1,5 +1,6 @@
 package com.example.pharmasictapp.ui.home_layout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +13,7 @@ import com.example.pharmasictapp.ui.home_layout.fragments.courses.CoursesFragmen
 import com.example.pharmasictapp.ui.home_layout.fragments.drugindex.DrugIndexFragment
 import com.example.pharmasictapp.ui.home_layout.fragments.home.HomeFragment
 import com.example.pharmasictapp.ui.home_layout.fragments.products_catalogue.ProductsCatalogueFragment
+import com.example.pharmasictapp.ui.profile.ProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
@@ -73,7 +75,11 @@ class HomeLayout : AppCompatActivity() {
         when(item.itemId){
             R.id.profileIcon ->{
                 firebaseAnalytics.logEvent("profile",null)
-                Toast.makeText(this,"Profile", Toast.LENGTH_SHORT).show()}
+
+                val intent:Intent =Intent(this,ProfileActivity::class.java)
+                startActivity(intent)
+
+            }
             R.id.notificationIcon ->{
                 firebaseAnalytics.logEvent("notification",null)
                 Toast.makeText(this,"notification", Toast.LENGTH_SHORT).show()}

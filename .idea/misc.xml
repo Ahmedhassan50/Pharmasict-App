@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/drawable/circle.xml" value="0.2064814814814815" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/drawable/ic_outline_account_circle_24.xml" value="0.21296296296296297" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/drawable/layout_bg.xml" value="0.20833333333333334" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/drawable/navigation_view_colored.xml" value="0.21296296296296297" />
@@ -12,6 +13,7 @@
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_login.xml" value="0.1947463768115942" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_main.xml" value="0.19972826086956522" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_main2.xml" value="0.1947463768115942" />
+        <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/activity_profile.xml" value="0.19972826086956522" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/app_action_bar.xml" value="0.19157608695652173" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/banner_item.xml" value="0.19972826086956522" />
         <entry key="..\:/fci/programming/problem solving/Eva Pharma/2021/Project/Pharmasict-App/app/src/main/res/layout/calender_view.xml" value="0.1875" />

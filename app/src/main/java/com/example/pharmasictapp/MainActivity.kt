@@ -3,17 +3,15 @@ package com.example.pharmasictapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.pharmasictapp.db.LoggingUserInfo
 import com.example.pharmasictapp.ui.home_layout.HomeLayout
 import com.example.pharmasictapp.ui.login.LoginActivity
-import com.google.gson.JsonObject
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
         val sharedPref=getSharedPreferences("autoLogin", MODE_PRIVATE)
         val isLogin = sharedPref.getString("userData",null)
         if (isLogin != null){

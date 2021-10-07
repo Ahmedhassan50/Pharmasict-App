@@ -1,4 +1,4 @@
-package com.example.pharmasictapp.ui.home_layout.fragments.courses
+package com.example.pharmasictapp.ui.home_layout.fragments.courses.mycourses
 
 import android.content.Intent
 import android.view.LayoutInflater

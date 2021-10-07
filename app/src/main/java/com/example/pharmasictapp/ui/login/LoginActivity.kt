@@ -76,6 +76,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    @DelicateCoroutinesApi
     private fun login(email: String, password: String) {
         loadingDialog.startLoadingDialog()
 

@@ -1,6 +1,18 @@
 package com.example.pharmasictapp.db.model
 
-class Course {
+data class Course(
+
+
+    val courseId:Int,
+    val title:String,
+    val description:String,
+    val startDate:String,
+    val endDate:String,
+    val courseTypeName:String,
+    val courseTypeId:Int,
+
+
+) {
     private var name:String?=null
     private var type:String?=null
     private var objective:String?=null

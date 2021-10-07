@@ -35,7 +35,12 @@ class CoursesDetailsActivity : AppCompatActivity() {
     }
 
     private fun setCourseData() {
-        val course:Course= Course()
+        val course:Course= Course(courseId = 0,title = "df",description = "dfd",
+            startDate = "fd",
+            endDate = "fdf",
+            courseTypeName = "fd",
+            courseTypeId = 0
+            )
         tvCourseName.text=course.getName()
         tvCourseType.text=course.getType()
         tvCourseObjective.text=course.getObjective()
