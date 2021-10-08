@@ -3,6 +3,7 @@ package com.example.pharmasictapp.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -20,6 +21,7 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
+import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
@@ -64,8 +66,13 @@ class LoginActivity : AppCompatActivity() {
 
         }
         btnSkip.setOnClickListener {
-            // go to home activity as a guest
             firebaseAnalytics.logEvent("skipClicked", null)
+
+            // go to home activity as a guest
+            val intent: Intent = Intent(this, HomeLayout::class.java)
+            startActivity(intent)
+
+
         }
 
         tvSignUp.setOnClickListener {
@@ -88,13 +95,13 @@ class LoginActivity : AppCompatActivity() {
             loadingDialog.dismissDialog()
             if (loginResult.isSuccessful) {
                 if (loginResult.body()?.get("isSuccess")?.asBoolean == true) {
-                    val userData = loginResult.body()?.get("data")?.asJsonObject
+                    val userData = JSONObject(loginResult.body()?.get("data").toString())
 
-                    LoggingUserInfo.setId(userData?.get("id").toString())
-                    LoggingUserInfo.setEmailAddress(userData?.get("email").toString())
-                    LoggingUserInfo.setName(userData?.get("name").toString())
-                    LoggingUserInfo.setPhoneNumber(userData?.get("photoName").toString())
-                    LoggingUserInfo.setToken(userData?.get("token").toString())
+                    LoggingUserInfo.setId(userData.get("id").toString())
+                    LoggingUserInfo.setEmailAddress(userData.get("email").toString())
+                    LoggingUserInfo.setName(userData.get("name").toString())
+                    LoggingUserInfo.setPhoneNumber(userData.get("phoneNumber").toString())
+                    LoggingUserInfo.setToken(userData.get("token").toString())
 
                     val sharedPref=getSharedPreferences("autoLogin", MODE_PRIVATE)
                     val editor=sharedPref.edit()

@@ -37,7 +37,7 @@
             android:textSize="40sp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="Course name"
+            tools:text="Course name"
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -48,7 +48,7 @@
             android:textSize="30sp"
             android:textColor="@color/subheader"
             android:textStyle="italic"
-            android:text="Course type"
+            tools:text="Course type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -118,7 +118,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_course_details_objective"
-                    android:text="Course Objective"
+                    tools:text="Course Objective"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="normal" />

@@ -7,7 +7,7 @@ object LoggingUserInfo {
     private var token: String? = null
     private var name: String? = null
 
-    fun setToken(token: String) {
+    fun setToken(token: String?) {
         this.token = token
     }
 
@@ -44,7 +44,7 @@ object LoggingUserInfo {
         return phoneNumber
     }
 
-    fun phoneToken(): String? {
+    fun getToken(): String? {
         return token
     }
 

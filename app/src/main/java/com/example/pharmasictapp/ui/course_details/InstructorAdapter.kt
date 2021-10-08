@@ -28,8 +28,8 @@ class InstructorAdapter(private val newlist:ArrayList<Instructor>): RecyclerView
     override fun onBindViewHolder(holder: InstructorViewHolder, position: Int)
     {
         val instructor=newlist[position]
-        holder.instructorName.text=instructor.getName()
-        holder.instructorDescription.text=instructor.getDescription()
+       /* holder.instructorName.text=instructor.getName()
+        holder.instructorDescription.text=instructor.getDescription()*/
 
 
     }

@@ -49,7 +49,7 @@
 
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-light"
-                android:text="Your Name"
+                tools:text="Your Name"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,7 @@
                 android:layout_below="@+id/tv_name"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif"
-                android:text="0122104545"
+                tools:text="0122104545"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -90,16 +90,17 @@
             app:layout_constraintTop_toBottomOf="@+id/rellay1">
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintVertical_bias="0.2"
                 android:layout_marginHorizontal="30dp"
 
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -119,9 +120,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Your Name"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="Your Name" />
 
                     <View
                         android:layout_width="match_parent"
@@ -148,9 +149,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="joey@sharenofood.com"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="joey@sharenofood.com" />
 
                     <View
                         android:layout_width="match_parent"
@@ -178,9 +179,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="+1-202-555-0157"
                         android:textColor="#000000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="+1-202-555-0157" />
 
                     <View
                         android:layout_width="match_parent"
@@ -192,6 +193,25 @@
 
 
             </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_btn_shape"
+                android:text="  LogOut  "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="5dp"
+
+
+                android:textAllCaps="false"
+                app:backgroundTint="@color/logo_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.818" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

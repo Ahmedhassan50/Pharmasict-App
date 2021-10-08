@@ -9,4 +9,8 @@ class CourseRepository(private val api:CoursesInterface) {
     suspend fun getUpComingCourses()= withContext(Dispatchers.IO){
         api.getUpComingCourses()
     }
+
+    suspend fun getCourseDetails(id:Int)= withContext(Dispatchers.IO){
+        api.getCourseDetails(id)
+    }
 }

@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             LoggingUserInfo.setId(userData.get("id").toString())
             LoggingUserInfo.setEmailAddress(userData.get("email").toString())
             LoggingUserInfo.setName(userData.get("name").toString())
-            LoggingUserInfo.setPhoneNumber(userData.get("photoName").toString())
+            LoggingUserInfo.setPhoneNumber(userData.get("phoneNumber").toString())
             LoggingUserInfo.setToken(userData.get("token").toString())
             val intent: Intent = Intent(this@MainActivity, HomeLayout::class.java)
             startActivity(intent)

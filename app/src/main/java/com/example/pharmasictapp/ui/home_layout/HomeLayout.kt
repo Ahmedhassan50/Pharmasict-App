@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.pharmasictapp.R
+import com.example.pharmasictapp.db.LoggingUserInfo
 import com.example.pharmasictapp.ui.home_layout.fragments.calendar.CalenderFragment
 import com.example.pharmasictapp.ui.home_layout.fragments.courses.CoursesFragment
 import com.example.pharmasictapp.ui.home_layout.fragments.drugindex.DrugIndexFragment
@@ -76,8 +77,14 @@ class HomeLayout : AppCompatActivity() {
             R.id.profileIcon ->{
                 firebaseAnalytics.logEvent("profile",null)
 
-                val intent:Intent =Intent(this,ProfileActivity::class.java)
-                startActivity(intent)
+                if(LoggingUserInfo.getToken()!=null){
+                    val intent:Intent =Intent(this,ProfileActivity::class.java)
+                    startActivity(intent)
+                }else{
+                    finish()
+                }
+
+
 
             }
             R.id.notificationIcon ->{

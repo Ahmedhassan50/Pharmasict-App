@@ -31,13 +31,15 @@ class UpComingAdapter  :RecyclerView.Adapter<UpComingViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: UpComingViewHolder, position: Int) {
+        val course=coursesList[position]
+        holder.bind(course)
         holder.itemView.setOnClickListener{
-            val intent: Intent = Intent(holder.itemView.context, CoursesDetailsActivity::class.java)
+            val intent= Intent(holder.itemView.context, CoursesDetailsActivity::class.java)
+            intent.putExtra("courseId",course.courseId)
             holder.itemView.context.startActivity(intent)
         }
 
-        val course=coursesList[position]
-        holder.bind(course)
+
 
     }
 

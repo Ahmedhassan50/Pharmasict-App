@@ -6,14 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.pharmasictapp.R
 import com.example.pharmasictapp.SeparatedSpace
+import com.example.pharmasictapp.db.LoggingUserInfo
 import com.example.pharmasictapp.db.model.BannerItem
+import com.example.pharmasictapp.db.model.Event
+import com.example.pharmasictapp.db.model.Offer
+import com.example.pharmasictapp.utils.LoadingDialog
 
 class HomeFragment : Fragment() {
+
+   private lateinit var eventsAdapter:EventsAdapter
+   private lateinit var offersAdapter:OffersAdapter
+   private lateinit var viewModel:HomeViewModel
+   private lateinit var loadingDialog: LoadingDialog
 
 
     override fun onCreateView(
@@ -59,7 +69,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel= ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+        eventsAdapter= EventsAdapter()
+        offersAdapter= OffersAdapter()
         banner = view.findViewById(R.id.bannerViewer)
+        loadingDialog= LoadingDialog(requireActivity())
         val adapter = BannerAdapter(bannerItems)
         banner.adapter = adapter
         banner.clipToPadding = false
@@ -89,23 +103,50 @@ class HomeFragment : Fragment() {
             }
 
         eventRv.addItemDecoration(SeparatedSpace(40))
-        eventRv.adapter = EventsAdapter()
+        eventRv.adapter = eventsAdapter
         eventRv.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-
 
         val offerRv: RecyclerView = view.findViewById(R.id.offer_RV)
         offerRv.layoutManager =
             object : LinearLayoutManager(view.context, RecyclerView.HORIZONTAL, false) {
                 override fun checkLayoutParams(lp: RecyclerView.LayoutParams): Boolean {
                     // force height of viewHolder here, this will override layout_height from xml
-                    lp.width = (width * 0.8).toInt()
+                   // lp.width = (width * 0.8).toInt()
                     lp.height = (width * 0.15).toInt()
                     return true
                 }
             }
         offerRv.addItemDecoration(SeparatedSpace(40))
-        offerRv.adapter = OffersAdapter()
+        offerRv.adapter = offersAdapter
         offerRv.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+
+
+
+
+
+        viewModel.getHomeData()
+        loadingDialog.startLoadingDialog()
+        viewModel.homeLiveData.observe(viewLifecycleOwner,{
+            if(it!=null){
+                if(LoggingUserInfo.getToken()!=null){
+                    eventsAdapter.setList(it.eventList as ArrayList<Event>)
+                }
+
+                offersAdapter.setList(it.offerList as ArrayList<Offer>)
+                loadingDialog.dismissDialog()
+        }
+            viewModel.clearData()
+
+
+        })
+
+
+
+
+
+
+
+
 
 
     }

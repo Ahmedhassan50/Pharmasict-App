@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class UpComingViewModel :ViewModel() {
 
     private var courseRepository:CourseRepository
-     var upComingCoursesLiveData =MutableLiveData<List<Course>>()
+    var upComingCoursesLiveData =MutableLiveData<List<Course>>()
     val upComingCourses:LiveData<List<Course>> get() = upComingCoursesLiveData
     init {
       val serviceInstance = ApiService.getRetrofitBuilder().create(CoursesInterface::class.java)
@@ -36,5 +36,6 @@ class UpComingViewModel :ViewModel() {
         }
 
     }
+
 
 }
