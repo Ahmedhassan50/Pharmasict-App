@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pharmasictapp.db.model.BannerItem
 import com.example.pharmasictapp.db.model.Event
 import com.example.pharmasictapp.db.model.HomeData
 import com.example.pharmasictapp.db.model.Offer
@@ -48,8 +49,16 @@ class HomeViewModel:ViewModel() {
             }
         }
 
+        val bannerResult=homeRepository.getBanners()
+        var loadedBanners:List<BannerItem> = emptyList()
+        if(bannerResult.isSuccessful){
+            if(bannerResult.body()!=null){
+                loadedBanners= bannerResult.body() as List<BannerItem>
+            }
+        }
 
-        homeMutableLiveData.postValue(HomeData("",loadedEvents,loadedOffers))
+
+        homeMutableLiveData.postValue(HomeData(loadedBanners,loadedEvents,loadedOffers))
     }
 
 
