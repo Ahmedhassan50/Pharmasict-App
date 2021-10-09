@@ -12,10 +12,13 @@ import com.example.pharmasictapp.R
 import com.example.pharmasictapp.db.model.Course
 import com.example.pharmasictapp.db.model.CourseDetails
 import com.example.pharmasictapp.db.model.Instructor
+import com.example.pharmasictapp.db.model.Lecture
 import com.example.pharmasictapp.utils.LoadingDialog
 
 class CoursesDetailsActivity : AppCompatActivity() {
     lateinit var lessons_recycle_view:RecyclerView
+    lateinit var lessonsAdapter:LessonAdaptor
+    lateinit var instructorAdapter:InstructorAdapter
     lateinit var instructors_recycle_view:RecyclerView
     lateinit var tvCourseName:TextView
     lateinit var tvCourseObjective:TextView
@@ -23,16 +26,20 @@ class CoursesDetailsActivity : AppCompatActivity() {
     lateinit var btnEnrollToCourse:Button
     lateinit var viewMode:CourseDetailsViewModel
     private lateinit var loadingDialog: LoadingDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_courses_details)
         val courseId:Int= intent.extras!!.getInt("courseId")
         viewMode=ViewModelProvider(this)[CourseDetailsViewModel::class.java]
         loadingDialog= LoadingDialog(this)
+        lessonsAdapter= LessonAdaptor()
+        instructorAdapter=InstructorAdapter()
         initCourseDetails()
-        setLessonsData()
-        setInstructorsData()
 
+
+        lessons_recycle_view.adapter=lessonsAdapter
+        instructors_recycle_view.adapter=instructorAdapter
         btnEnrollToCourse.setOnClickListener{
             //get current user data
             // send them to db
@@ -50,6 +57,9 @@ class CoursesDetailsActivity : AppCompatActivity() {
         viewMode.courseDetailsLiveData.observe(this,{
             if(it!=null){
                 setCourseData(it)
+                lessonsAdapter.setList(it.lectures as ArrayList<Lecture>)
+                instructorAdapter.setList(it.instructors as ArrayList<Instructor>)
+
                 loadingDialog.dismissDialog()
             }
             viewMode.clearData()
@@ -74,6 +84,8 @@ class CoursesDetailsActivity : AppCompatActivity() {
         tvCourseName.text=course.title
         tvCourseType.text=course.courseTypeName
         tvCourseObjective.text=course.objective
+
+
     }
 
     private fun initCourseDetails(){
@@ -99,7 +111,7 @@ class CoursesDetailsActivity : AppCompatActivity() {
         lessons.add("Variables")
         lessons.add("sets")
         lessons.add("lists")
-        lessons_recycle_view.adapter=LessonAdaptor(lessons)
+
 
     }
     private fun setInstructorsData(){
@@ -117,7 +129,7 @@ class CoursesDetailsActivity : AppCompatActivity() {
         instructor.setName("Zaina Ayman")
         instructor.setDescription("Computer Engineer at Eva Pharma")
         instructors.add(instructor3)*/
-        instructors_recycle_view.adapter=InstructorAdapter(instructors)
+
 
     }
 

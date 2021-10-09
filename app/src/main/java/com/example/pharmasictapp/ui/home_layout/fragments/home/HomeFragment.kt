@@ -22,6 +22,7 @@ class HomeFragment : Fragment() {
 
    private lateinit var eventsAdapter:EventsAdapter
    private lateinit var offersAdapter:OffersAdapter
+    private lateinit var bannerssAdapter:BannerAdapter
    private lateinit var viewModel:HomeViewModel
    private lateinit var loadingDialog: LoadingDialog
 
@@ -34,48 +35,7 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.activity_home, container, false)
     }
 
-    private val bannerItems = mutableListOf<BannerItem>().apply {
-        add(
-            BannerItem(
-                id = 0,
-                imageUrl = "https://student.valuxapps.com/storage/uploads/banners/1619472351ITAM5.3bb51c97376281.5ec3ca8c1e8c5.jpg",
-                imageName =  "fdf",
-                route = "dfd",
-                rank = 0
 
-            )
-        )
-        add(
-            BannerItem(
-                id = 1,
-                imageUrl = "https://student.valuxapps.com/storage/uploads/banners/1619472116OYHxC.45b7de97376281.5ec3ca8c1d324.jpg"
-                       , imageName =  "fdf",
-                route = "dfd",
-                rank = 0
-            )
-        )
-        add(
-            BannerItem(
-                id = 2,
-                imageUrl = "https://student.valuxapps.com/storage/uploads/banners/1626544896muQ0Q.best-deal-promotional-ribbon-style-green-banner-design_1017-27469.jpg"
-                       , imageName =  "fdf",
-                route = "dfd",
-                rank = 0
-            )
-        )
-        add(
-            BannerItem(
-                id = 3,
-                imageUrl = "https://student.valuxapps.com/storage/uploads/banners/1626545208UfigP.golden-coin-money-cashback-promotion-ecommerce-poster-banner-template-blue-background-216757528.jpg"
-                        ,imageName =  "fdf",
-                route = "dfd",
-                rank = 0
-            )
-        )
-        //add(BannerItem(id=4,imageUrl="https://student.valuxapps.com/storage/uploads/banners/16283378549Vinn.banner foods@2x.png"))
-
-
-    }
     val handler = Handler()
     private lateinit var banner: ViewPager2
 
@@ -85,9 +45,10 @@ class HomeFragment : Fragment() {
         viewModel= ViewModelProvider(requireActivity())[HomeViewModel::class.java]
         eventsAdapter= EventsAdapter()
         offersAdapter= OffersAdapter()
+        bannerssAdapter= BannerAdapter()
         banner = view.findViewById(R.id.bannerViewer)
         loadingDialog= LoadingDialog(requireActivity())
-        val adapter = BannerAdapter(bannerItems)
+        val adapter = bannerssAdapter
         banner.adapter = adapter
         banner.clipToPadding = false
         banner.clipChildren = false
@@ -129,7 +90,7 @@ class HomeFragment : Fragment() {
                     return true
                 }
             }
-        offerRv.addItemDecoration(SeparatedSpace(40))
+        offerRv.addItemDecoration(SeparatedSpace(20))
         offerRv.adapter = offersAdapter
         offerRv.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
@@ -146,6 +107,7 @@ class HomeFragment : Fragment() {
                 }
 
                 offersAdapter.setList(it.offerList as ArrayList<Offer>)
+                bannerssAdapter.setList(it.carouselList as ArrayList<BannerItem>)
                 loadingDialog.dismissDialog()
         }
             viewModel.clearData()
@@ -167,7 +129,7 @@ class HomeFragment : Fragment() {
 
     val bannerRun: Runnable = Runnable {
 
-        if (banner.currentItem == bannerItems.size - 1) {
+        if (banner.currentItem == 4) {
             banner.currentItem = 0
         } else {
             banner.currentItem = banner.currentItem + 1

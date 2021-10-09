@@ -1,6 +1,7 @@
 package com.example.pharmasictapp.ui.login
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -191,6 +192,9 @@ class LoginActivity : AppCompatActivity() {
                 "Ok"
             ) { dialog, id -> dialog.cancel() }
         val alertDialog = builder.create()
+        alertDialog.setOnShowListener{
+            alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLUE)
+        }
         alertDialog.show()
     }
 
