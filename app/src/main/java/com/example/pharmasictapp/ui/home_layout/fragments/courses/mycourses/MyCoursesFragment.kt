@@ -1,4 +1,4 @@
-package com.example.pharmasictapp.ui.home_layout.fragments.courses
+package com.example.pharmasictapp.ui.home_layout.fragments.courses.mycourses
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pharmasictapp.R
+import com.example.pharmasictapp.ui.home_layout.fragments.courses.CourseItemSeparatedSpace
 import me.farahani.spaceitemdecoration.SpaceItemDecoration
 
 class MyCoursesFragment:Fragment() {
@@ -23,8 +25,8 @@ class MyCoursesFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val  myCoursesRv= view.findViewById<RecyclerView>(R.id.myCoursesRV)
-        myCoursesRv.layoutManager= GridLayoutManager(view.context,2)
-        myCoursesRv.addItemDecoration(SpaceItemDecoration(40, true))
+        myCoursesRv.layoutManager= LinearLayoutManager(view.context)
+        myCoursesRv.addItemDecoration(CourseItemSeparatedSpace(40))
         myCoursesRv.adapter=MyCoursesAdapter()
     }
 }

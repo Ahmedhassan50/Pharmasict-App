@@ -1,5 +1,6 @@
 package com.example.pharmasictapp.db.model
 
+/*
 class Instructor
 {
 
@@ -26,4 +27,4 @@ class Instructor
         return description?:"Software Engineer at x company."
 
     }
-}
+}*/
