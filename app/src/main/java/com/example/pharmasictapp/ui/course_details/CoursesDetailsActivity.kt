@@ -1,5 +1,6 @@
 package com.example.pharmasictapp.ui.course_details
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,10 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pharmasictapp.R
+import com.example.pharmasictapp.db.LoggingUserInfo
 import com.example.pharmasictapp.db.model.Course
 import com.example.pharmasictapp.db.model.CourseDetails
 import com.example.pharmasictapp.db.model.Instructor
 import com.example.pharmasictapp.db.model.Lecture
+import com.example.pharmasictapp.ui.login.LoginActivity
 import com.example.pharmasictapp.utils.LoadingDialog
 import com.google.android.material.appbar.AppBarLayout
 
@@ -46,13 +49,20 @@ class CoursesDetailsActivity : AppCompatActivity() {
         btnEnrollToCourse.setOnClickListener{
             //get current user data
             // send them to db
-            val dialog=RegisterDialog()
+            if(LoggingUserInfo.getToken()!=null){
+                val dialog=RegisterDialog()
 
-            args.putString("name", tvCourseName.text.toString())
-            args.putString("type", tvCourseType.text.toString())
+                args.putString("name", tvCourseName.text.toString())
+                args.putString("type", tvCourseType.text.toString())
 
-            dialog.arguments=args
-            dialog.show(supportFragmentManager,"Confirm")
+                dialog.arguments=args
+                dialog.show(supportFragmentManager,"Confirm")
+            }else{
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
+
         }
 
         viewMode.getCourseDetails(courseId)
