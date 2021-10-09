@@ -15,6 +15,7 @@ import com.example.pharmasictapp.db.LoggingUserInfo
 import com.example.pharmasictapp.db.network.ApiService
 import com.example.pharmasictapp.db.repositories.AuthRepository
 import com.example.pharmasictapp.ui.home_layout.HomeLayout
+import com.example.pharmasictapp.ui.signup.SignUpActivity
 import com.example.pharmasictapp.utils.LoadingDialog
 import com.example.pharmasictapp.utils.ValidUserInfo
 import com.google.firebase.FirebaseApp
@@ -78,7 +79,8 @@ class LoginActivity : AppCompatActivity() {
 
         tvSignUp.setOnClickListener {
             // go to sign up activity
-
+            val intent: Intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
         tvForgetPassword.setOnClickListener {
         }

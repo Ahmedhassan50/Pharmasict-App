@@ -8,12 +8,14 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.pharmasictapp.R
 import com.example.pharmasictapp.db.model.Course
 import com.example.pharmasictapp.db.model.CourseDetails
 import com.example.pharmasictapp.db.model.Instructor
 import com.example.pharmasictapp.db.model.Lecture
 import com.example.pharmasictapp.utils.LoadingDialog
+import com.google.android.material.appbar.AppBarLayout
 
 class CoursesDetailsActivity : AppCompatActivity() {
     lateinit var lessons_recycle_view:RecyclerView
@@ -25,8 +27,9 @@ class CoursesDetailsActivity : AppCompatActivity() {
     lateinit var tvCourseType:TextView
     lateinit var btnEnrollToCourse:Button
     lateinit var viewMode:CourseDetailsViewModel
+    lateinit var courseImage: AppBarLayout
     private lateinit var loadingDialog: LoadingDialog
-
+   private lateinit  var args:Bundle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_courses_details)
@@ -36,7 +39,7 @@ class CoursesDetailsActivity : AppCompatActivity() {
         lessonsAdapter= LessonAdaptor()
         instructorAdapter=InstructorAdapter()
         initCourseDetails()
-
+        args = Bundle()
 
         lessons_recycle_view.adapter=lessonsAdapter
         instructors_recycle_view.adapter=instructorAdapter
@@ -44,9 +47,10 @@ class CoursesDetailsActivity : AppCompatActivity() {
             //get current user data
             // send them to db
             val dialog=RegisterDialog()
-            val args = Bundle()
+
             args.putString("name", tvCourseName.text.toString())
             args.putString("type", tvCourseType.text.toString())
+
             dialog.arguments=args
             dialog.show(supportFragmentManager,"Confirm")
         }
@@ -84,6 +88,8 @@ class CoursesDetailsActivity : AppCompatActivity() {
         tvCourseName.text=course.title
         tvCourseType.text=course.courseTypeName
         tvCourseObjective.text=course.objective
+        args.putString("startDate", course.startDate)
+        args.putString("endDate", course.endDate)
 
 
     }
@@ -99,6 +105,7 @@ class CoursesDetailsActivity : AppCompatActivity() {
         tvCourseName=findViewById(R.id.tv_course_details_name)
         tvCourseObjective=findViewById(R.id.tv_course_details_objective)
         tvCourseType=findViewById(R.id.tv_course_details_type)
+        courseImage=findViewById(R.id.courseDerailsImage)
 
 
     }

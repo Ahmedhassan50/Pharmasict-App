@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">Pharmasict App</string>
+    <string name="app_name">pharmacist App</string>
     <string name="login">Login</string>
     <string name="skip">Skip</string>
+    <string-array name="occupation_array">
+        <item>Medical Representative</item>
+        <item>Hospital Pharmacist</item>
+        <item>Pharmacist</item>
+        <item>Pharmacist Owner</item>
+    </string-array>
 </resources>

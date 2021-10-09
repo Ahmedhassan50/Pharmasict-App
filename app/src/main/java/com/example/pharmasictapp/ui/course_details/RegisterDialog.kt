@@ -61,6 +61,8 @@ class RegisterDialog: AppCompatDialogFragment() {
         val type =args?.getString("type")
         courseName.text=name
         courseType.text=type
+        startDate.text=args?.getString("startDate")
+        endDate.text=args?.getString("endDate")
 
        return builder.create()
 

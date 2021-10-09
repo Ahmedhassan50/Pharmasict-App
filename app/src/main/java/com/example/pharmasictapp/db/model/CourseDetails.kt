@@ -7,6 +7,7 @@ data class CourseDetails (
     val title:String,
     val description:String,
     val startDate:String,
+    val imgPath:String,
     val endDate:String,
     val objective:String,
     val courseTypeId:Int,
