@@ -35,4 +35,11 @@ class CourseDetailsViewModel:ViewModel() {
             }
         }
     }
+
+    fun courseRegister(userId:String,courseId:Int)=viewModelScope.launch{
+        val result=courseRepository.courseRegister(userId,courseId)
+    }
+
+
+
 }

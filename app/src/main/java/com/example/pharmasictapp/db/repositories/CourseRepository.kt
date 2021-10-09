@@ -13,4 +13,8 @@ class CourseRepository(private val api:CoursesInterface) {
     suspend fun getCourseDetails(id:Int)= withContext(Dispatchers.IO){
         api.getCourseDetails(id)
     }
+
+    suspend fun courseRegister(userId:String,courseId:Int)= withContext(Dispatchers.IO){
+        api.courseRegister(userId,courseId)
+    }
 }
